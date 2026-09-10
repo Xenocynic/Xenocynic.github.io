@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 2rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+
+    padding: 2rem;
+}
+
+.project-card {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tags span {
+    border: 1px solid #aaa;
+    padding: 0.25rem 0.5rem;
+}
+
+
+/* FILTER SIDEBAR */
+
+#filter-sidebar {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+
+    width: min(400px, 90vw);
+    height: 100vh;
+
+    padding: 2rem;
+
+    background: white;
+
+    transform: translateX(100%);
+    transition: transform 0.25s ease;
+
+    z-index: 20;
+}
+
+#filter-sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+fieldset {
+    border: 0;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+fieldset label {
+    display: block;
+    margin: 0.75rem 0;
+}
+
+
+/* BACKDROP */
+
+#filter-backdrop {
+    position: fixed;
+    inset: 0;
+
+    background: rgb(0 0 0 / 0.4);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.25s ease;
+
+    z-index: 10;
+}
+
+#filter-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+
+.project-card[hidden] {
+    display: none;
+}

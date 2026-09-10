@@ -1,125 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Selena Chainani's Super Epic Portfolio</title>
+    <title>Selena Chainani's Super Epic Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
+
 <body>
 
-  <header>
-    <h1>Your Name</h1>
+    <header>
 
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#graphicdesign">Graphic Design</a>
-      <a href="#art">Art</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+        <button id="open-filters">
+            Filters
+        </button>
+    </header>
 
-  <main>
-    <section>
-      <h2>Hello! Welcome.</h2>
-      <p>
-        I like to design things and make them do cool things, like be accessible. (edit this please goodness)
-      </p>
-      <p>
-        Insert current project previews potentially?
-      </p>
-    </section>
+    <main>
+        <section class="project-grid">
 
-    <section id="projects">
-      <h2>Selected Work</h2>
+            <article
+                class="project-card"
+                data-tags="game-development frontend-development project-management narrative-design"
+            >
+                <h2>
+                    <a href="projects/ephialtine.html">
+                        Ephialtine
+                    </a>
+                </h2>
 
-      <article>
-        <h3>Afterdusk [2024]</h3>
-        <p>Created and designed UI for a game we worked on.</p>
-      </article>
+                <p>
+                    A 3D survival horror game.
+                </p>
 
-      <article>
-        <h3>Moodly [2024]</h3>
-        <p>Created custom assets for and designed the main flow for a mobile app we worked on using Figma.</p>
-      </article>
+                <div class="tags">
+                    <span>Game Development</span>
+                    <span>Frontend Development</span>
+                    <span>Project Management</span>
+                    <span>Narrative Design</span>
+                </div>
+            </article>
 
-      <article>
-        <h3>ISD - Individual Survival Distributions [2025]</h3>
-        <p>Created and designed the interface for a web application meant for machine learning researchers! Used Canva for the wireframes and React for the frontend.</p>
-      </article>
-    </section>
 
-    <section id="graphicdesign">
-      <h2>Selected Work</h2>
+            <article
+                class="project-card"
+                data-tags="web-development frontend-development project-management ui-ux"
+            >
+                <h2>
+                    <a href="projects/isd.html">
+                        Individual Survival Distributions
+                    </a>
+                </h2>
 
-      <article>
-        <h3>Ada's Team</h3>
-        <p>Made all the club's graphics for the 2025-26 academic year!</p>
-      </article>
+                <p>
+                    A website that allows users to upload their datasets, train survival models (predictors), and generate individualized survival predictions. 
+                </p>
 
-      <article>
-        <h3>UOFAFS</h3>
-        <p>Made some posters for the club's screenings.</p>
-      </article>
+                <div class="tags">
+                    <span>Fullstack Web Development</span>
+                    <span>Frontend Development</span>
+                    <span>Project Management</span>
+                    <span>UI / UX Design</span>
+                </div>
+            </article>
 
-      <article>
-        <h3>DES 135</h3>
-        <p>Designed some things in this course that I am proud of.</p>
-      </article>
 
-      <article>
-        <h3>Misc. Game UI</h3>
-        <p>Some UI designs for games</p>
-      </article>
+            <article
+                class="project-card"
+                data-tags="mobile-app ui-ux project-management"
+            >
+                <h2>
+                    <a href="projects/moodly.html">
+                        Moodly
+                    </a>
+                </h2>
 
-      <article>
-        <h3>Misc. Posters for Games</h3>
-        <p>Posters designed specifically to be seen in-game.</p>
-      </article>
+                <p>
+                    Web application built with React and TypeScript.
+                </p>
 
-      <article>
-        <h3>Redesign Case Studies</h3>
-        <p>I didn't like some designs / liked them a lot and wondered what they'd look like in my style and so, I remade them.</p>
-      </article>
+                <div class="tags">
+                    <span>Mobile App Development</span>
+                    <span>UI / UX Design</span>
+                    <span>Project Management</span>
+                </div>
+            </article>
 
-      <article>
-        <h3>Misc. Posters</h3>
-        <p>Posters designed for events, a relatively unorganized collection.</p>
-      </article>
-    </section>
+        </section>
+    </main>
 
-    <section id="art">
-      <h2>Selected Work</h2>
 
-      <article>
-        <h3>2D Game Assets</h3>
-        <p>Includes the art besides the UI that I created.</p>
-      </article>
+    <div id="filter-backdrop"></div>
 
-      <article>
-        <h3>Animations / GIFs</h3>
-        <p>A sampling of small things I have made.</p>
-      </article>
 
-      <article>
-        <h3>Discord / Twitch Emotes</h3>
-        <p>Some emotes I designed. Some were used as indicated, others were hid away because I was shy.</p>
-      </article>
-    </section>
+    <!-- epic sidebar -->
+    <aside id="filter-sidebar">
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>
-        I am me. I do stuff.
-      </p>
-    </section>
+        <div class="sidebar-header">
+            <h2>Filter projects</h2>
+            <button id="close-filters">×</button>
+        </div>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email me at <a href="mailto:your.email@example.com">selena.chainani@outlook.com</a>.</p>
-    </section>
-  </main>
+        <fieldset>
+            <legend>Area</legend>
+
+            <label>
+                <input type="checkbox" value="game-development">
+                Game Development
+            </label>
+
+            <label>
+                <input type="checkbox" value="frontend-development">
+                Frontend Development
+            </label>
+
+            <label>
+                <input type="checkbox" value="web-development">
+                Fullstack Web Development
+            </label>
+
+            <label>
+                <input type="checkbox" value="ui-ux">
+                UI / UX Design
+            </label>
+
+            <label>
+                <input type="checkbox" value="project-management">
+                Project Management
+            </label>
+
+            <label>
+                <input type="checkbox" value="narrative-design">
+                Narrative Design
+            </label>
+
+            <label>
+                <input type="checkbox" value="mobile-app">
+                Mobile App Development
+            </label>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Tech / Tools</legend>
+
+            <label>
+                <input type="checkbox" value="unity">
+                Unity / C#
+            </label>
+
+            <label>
+                <input type="checkbox" value="react">
+                React
+            </label>
+
+            <label>
+                <input type="checkbox" value="python">
+                Python
+            </label>
+        </fieldset>
+
+        <button id="clear-filters">
+            Clear filters
+        </button>
+
+    </aside>
 
   <footer>
     <p>© 2026 Selena Chainani</p>
